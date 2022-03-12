@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Shared.fs" />
+    <Compile Include="StartPage.fs" />
+    <Compile Include="FirstPage.fs" />
+    <Compile Include="SecondPage.fs" />
     <Compile Include="FabulousMultiNavPages.fs" />
   </ItemGroup>
   

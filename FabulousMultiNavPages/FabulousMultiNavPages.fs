@@ -6,7 +6,6 @@ open Fabulous
 open Fabulous.XamarinForms
 open Fabulous.XamarinForms.LiveUpdate
 open Xamarin.Forms
-//open Helpers
 
 module App =
     type Model =
