@@ -6,8 +6,8 @@ open Fabulous.XamarinForms
 open Fabulous.XamarinForms.LiveUpdate
 open Xamarin.Forms
 
-module SecondPage =
-    let thisPage = AppPages.names.SecondPage
+module TemplatePage =
+    let thisPage = AppPages.names.TemplatePage
     type Model = { 
         Title: AppPages.Name 
     }
@@ -21,7 +21,7 @@ module SecondPage =
 
     let update msg (model: Model) (globalModel: GlobalModel) =
         match msg with
-        | Close -> model, { globalModel with PageStash = [AppPages.names.StartPage] }, Cmd.none
+        | Close -> model, { globalModel with PageStash = [thisPage] }, Cmd.none
 
     let view (model: Model) (globalModel: GlobalModel) dispatch =
         View.ContentPage (

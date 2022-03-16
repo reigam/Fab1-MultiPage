@@ -10,11 +10,12 @@
     <Compile Include="StartPage.fs" />
     <Compile Include="FirstPage.fs" />
     <Compile Include="SecondPage.fs" />
+    <Compile Include="TemplatePage.fs" />
     <Compile Include="FabulousMultiNavPages.fs" />
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Fabulous.XamarinForms" Version="1.1.0" />
     <PackageReference Include="Fabulous.XamarinForms.LiveUpdate" Version="1.1.0" />

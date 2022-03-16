@@ -7,12 +7,15 @@ open Fabulous.XamarinForms.LiveUpdate
 open Xamarin.Forms
 
 module StartPage =
-    type Model = { Title: string }
+    let thisPage = AppPages.names.StartPage
+    type Model = { 
+        Title: AppPages.Name 
+    }
 
     type Msg =
-        | OpenPage of string
+        | OpenPage of AppPages.Name
 
-    let initModel = { Title = "Start Page" }
+    let initModel = { Title = thisPage }
 
     let init() = initModel, Cmd.none
 
@@ -22,16 +25,16 @@ module StartPage =
 
     let view (model: Model) (globalModel: GlobalModel) dispatch =
         View.ContentPage (
-            title = model.Title,
+            title = (model.Title |> AppPages.nameValue),
             content = View.StackLayout (                
                 verticalOptions = LayoutOptions.Center,
                 children = [
                     View.Button (
                         text = "Go to first page",
-                        command = (fun () -> dispatch (OpenPage "FirstPage")),
+                        command = (fun () -> dispatch (OpenPage AppPages.names.FirstPage)),
                         horizontalOptions = LayoutOptions.Center) 
                     View.Button (
                         text = "Go to second page",
-                        command = (fun () -> dispatch (OpenPage "SecondPage")),
+                        command = (fun () -> dispatch (OpenPage AppPages.names.SecondPage)),
                         horizontalOptions = LayoutOptions.Center) 
                 ]))

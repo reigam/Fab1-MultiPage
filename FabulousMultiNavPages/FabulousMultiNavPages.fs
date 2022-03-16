@@ -22,7 +22,7 @@ module App =
 
     let initModel =
         { Global = { 
-            PageStash = ["StartPage"] }
+            PageStash = [AppPages.names.StartPage] }
           StartPage = fst (StartPage.init())
           FirstPage = fst (FirstPage.init())
           SecondPage = fst (SecondPage.init()) }
@@ -47,13 +47,13 @@ module App =
         View.NavigationPage(pages = [            
             for page in model.Global.PageStash do
                 match page with
-                | "StartPage" -> 
+                | AppPages.Name "Start Page" -> 
                     let p = StartPage.view model.StartPage model.Global (StartPageMsg >> dispatch)
                     yield p
-                | "FirstPage" ->   
+                | AppPages.Name "First Page" ->   
                     let p = FirstPage.view model.FirstPage model.Global (FirstPageMsg >> dispatch)
                     yield p
-                | "SecondPage" -> 
+                | AppPages.Name "Second Page" -> 
                     let p = SecondPage.view model.SecondPage model.Global (SecondPageMsg >> dispatch)
                     yield p
                 | _ -> ()
