@@ -35,5 +35,9 @@ module FirstPage =
                         text = "Go to second page",
                         command = (fun () -> dispatch (OpenPage AppPages.names.SecondPage)),
                         horizontalOptions = LayoutOptions.Center) 
+                    View.Button (
+                        text = "Back to start page",
+                        command = (fun () -> dispatch (Close)),
+                        horizontalOptions = LayoutOptions.Center) 
 
                 ]))
